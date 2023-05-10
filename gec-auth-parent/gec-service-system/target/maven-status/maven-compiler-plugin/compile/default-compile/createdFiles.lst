@@ -1,0 +1,4 @@
+com\gec\system\service\Impl\SysRoleServiceImpl.class
+com\gec\system\SystemApp.class
+com\gec\system\service\SysRoleService.class
+com\gec\system\mapper\SysRoleMapper.class

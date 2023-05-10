@@ -1,0 +1,3 @@
+com\gec\model\base\BaseEntity.class
+com\gec\model\vo\SysRoleQueryVo.class
+com\gec\model\system\SysRole.class

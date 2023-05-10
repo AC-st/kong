@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gec.system.mapper.SysUserMapper">
+    <resultMap id="UserMap" type="com.gec.model.system.SysUser" autoMapping="true"/>
+    <sql id="columns">
+        id,username,password,name,phone,head_url,post_id,dept_id,description,status,create_time,update_time,is_deleted
+    </sql>
+    <select id="selectUserByPage" resultMap="UserMap">
+        select <include refid="columns"/>
+        from sys_user <where>
+        <if test="vo.keyword != null and vo.keyword != ''">
+            and username like CONCAT('%',#{vo.keyword},"%")
+        </if>
+        and is_deleted = 0
+    </where>
+        order by id desc
+    </select>
+</mapper>

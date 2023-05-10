@@ -1,0 +1,43 @@
+server:
+  port: 8085
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 查看日志
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/gec-auth-parent?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    timeout: 1800000
+    password:
+    jedis:
+      pool:
+        max-active: 20 #最大连接数
+        max-wait: -1    #最大阻塞等待时间(负数表示没限制)
+        max-idle: 5    #最大空闲
+        min-idle: 0     #最小空闲
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 1000MB
+al:
+  #LTAI5tL82wC4AjW8TDv3Qk5r
+  #JDj985aGmXYeudCyduDqWd22HQC9QR
+  oss: #存储
+    endpoint: oss-cn-guangzhou.aliyuncs.com   # 域
+    accessKeyId: LTAI5tL82wC4AjW8TDv3Qk5r  # 秘钥
+    accessKeySecret: JDj985aGmXYeudCyduDqWd22HQC9QR # 秘钥
+    bucketName: ai-movies  # 桶名
+    url: https://ai-movies.oss-cn-guangzhou.aliyuncs.com  # 访问地址
+  vod: # 视频
+    regionId: cn-shanghai
+    accessKeyId: LTAI5tL82wC4AjW8TDv3Qk5r
+    accessKeySecret: JDj985aGmXYeudCyduDqWd22HQC9QR

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gec.system.mapper.SysRoleMapper">
+    <resultMap id="RoleMap" type="com.gec.model.system.SysRole" autoMapping="true"/>
+    <sql id="columns">id,role_name,role_code,description,create_time,update_time,is_deleted</sql>
+    <select id="selectRoleByPage" resultMap="RoleMap">
+        select <include refid="columns"/>
+        from sys_role <where>
+        <if test="vo.roleName != null and vo.roleName != ''">
+            and role_name like CONCAT('%',#{vo.roleName},"%")
+        </if>
+        and is_deleted = 0
+        </where>
+        order by id desc
+    </select>
+
+</mapper>
